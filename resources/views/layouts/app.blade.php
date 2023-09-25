@@ -37,6 +37,16 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="{{ route('admin.resources.index') }}"
+                                    @class([
+                                        $linkClasses,
+                                        'bg-white text-primary' => request()->routeIs('admin.resources.index'),
+                                        'text-white' => !request()->routeIs('admin.resources.index')
+                                    ])>
+                                    Risorse
+                                </a>
+                            </li>
+                            <li>
                                 <a href="#"
                                     @class([
                                         $linkClasses,
@@ -64,7 +74,7 @@
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
 
-                        <button type="submit" class="btn btn-danger w-100">
+                        <button type="submit" class="btn btn-danger w-100 fw-bold">
                             Log Out
                         </button>
                     </form>
